@@ -1,6 +1,5 @@
-<img src="./src/assets/images/phone_image.png" alt="IDaniel" width="80">
-
 > Phones App
+> <img src="./logo.png" alt="IDaniel" width="80">
 
 ## Quick start
 
