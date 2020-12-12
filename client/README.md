@@ -1,4 +1,4 @@
-<img src="./src/assets/images/phone_image.png" alt="IDaniel" width="256">
+<img src="./src/assets/images/phone_image.png" alt="IDaniel" width="80">
 
 > Phones App
 
