@@ -2,6 +2,7 @@
   "name": "phones-app",
   "version": "1.0.0",
   "scripts": {
+    "client:lint": "cd client && yarn lint",
     "client:build": "cd client && yarn build",
     "server:build": "cd server && yarn build",
     "client:dev": "cd client && yarn dev",
@@ -10,7 +11,7 @@
     "install:server": "cd server && yarn install",
     "postinstall": "npm run install:client && npm run install:server",
     "dev": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
-    "deploy:backend": "git subtree push --prefix server heroku master --no-verify"
+    "deploy:backend": "git subtree push --prefix server heroku master"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
@@ -18,8 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cd client && yarn lint",
-      "pre-push": "yarn client:build && yarn server:build"
+      "pre-commit": "yarn client:lint && yarn client:build && yarn server:build"
     }
   }
 }
