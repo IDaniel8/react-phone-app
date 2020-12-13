@@ -8,20 +8,21 @@
   "scripts": {
     "clean": "rm -Rf ./dist",
     "build": "yarn clean && babel ./src --out-dir ./dist --copy-files",
-    "start": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js",
-    "start:prod": "cross-env NODE_ENV=production node dist/index.js"
+    "dev": "cross-env JWT_SECRET=2c5e4084-3d4a-11eb-adc1-0242ac120002 nodemon --exec babel-node src/index.js",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "cross-env": "^7.0.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
-    "cross-env": "^7.0.2",
     "nodemon": "^2.0.6"
   }
 }
