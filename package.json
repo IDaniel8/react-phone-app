@@ -10,7 +10,7 @@
     "install:server": "cd server && yarn install",
     "postinstall": "npm run install:client && npm run install:server",
     "dev": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
-    "deploy:backend": "git subtree push --prefix server heroku master"
+    "deploy:backend": "git subtree push --prefix server heroku master --no-verify"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
@@ -18,7 +18,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cd client && yarn lint"
+      "pre-commit": "cd client && yarn lint",
+      "pre-push": "yarn client:build && yarn server:build"
     }
   }
 }
