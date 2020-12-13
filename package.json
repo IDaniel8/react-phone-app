@@ -2,8 +2,8 @@
   "name": "phones-app",
   "version": "1.0.0",
   "scripts": {
-    "client:prod": "cd client && yarn build",
-    "server:prod": "cd server && yarn build",
+    "client:prod": "cd client && yarn build && yarn start:prod",
+    "server:prod": "cd server && yarn build && yarn start:prod",
     "client:dev": "cd client && yarn start",
     "server:dev": "cd server && yarn start",
     "install:client": "cd client && yarn install",
