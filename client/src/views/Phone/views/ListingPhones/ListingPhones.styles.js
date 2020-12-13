@@ -16,12 +16,11 @@ const PhonesContainer = styled.div`
 `
 
 const PhoneDisplayWrapper = styled.div`
+  width: 280px;
+
   &:not(:last-of-type) {
     margin-bottom: 20px;
   }
-`
-const PhoneDisplay = styled(BasePhoneDisplay)`
-  width: 280px;
 
   @media ${device.tablet} {
     width: 100%;
@@ -29,5 +28,6 @@ const PhoneDisplay = styled(BasePhoneDisplay)`
     margin: 0 auto;
   }
 `
+const PhoneDisplay = styled(BasePhoneDisplay)``
 
 export { LisingPhonesContainer, PhonesContainer, PhoneDisplay, PhoneDisplayWrapper }
