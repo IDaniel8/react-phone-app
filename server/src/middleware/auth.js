@@ -8,6 +8,7 @@ function authenticate(req, res, next) {
   if (token) {
     // Validate token with the secret
     jwt.verify(token, process.env.JWT_SECRET, (err) => {
+      console.log("SECRET", process.env.JWT_SECRET);
       if (err) {
         res
           .status(401)
