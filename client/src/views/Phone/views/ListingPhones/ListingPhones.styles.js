@@ -15,14 +15,19 @@ const PhonesContainer = styled.div`
   }
 `
 
-const PhoneDisplay = styled(BasePhoneDisplay)`
-  max-width: 280px;
+const PhoneDisplayWrapper = styled.div`
   &:not(:last-of-type) {
     margin-bottom: 20px;
   }
+`
+const PhoneDisplay = styled(BasePhoneDisplay)`
+  width: 280px;
+
   @media ${device.tablet} {
+    width: 100%;
     max-width: 800px;
+    margin: 0 auto;
   }
 `
 
-export { LisingPhonesContainer, PhonesContainer, PhoneDisplay }
+export { LisingPhonesContainer, PhonesContainer, PhoneDisplay, PhoneDisplayWrapper }

@@ -10,7 +10,6 @@ const PhoneWrapper = styled.div`
   flex-direction: column;
 
   @media ${device.tablet} {
-    margin: 0 auto;
     flex-direction: row;
     & > * {
       flex: 1;

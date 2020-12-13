@@ -1,7 +1,7 @@
 import { httpClient } from '@shared'
 
 function getPhones() {
-  return httpClient.get('/phones?delay=2000')
+  return httpClient.get('/phones?delay=500')
 }
 
 // function getPhone({ id }) {
