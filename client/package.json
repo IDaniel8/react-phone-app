@@ -23,8 +23,8 @@
     "uuid": "^8.3.1"
   },
   "scripts": {
-    "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "start": "react-app-rewired start",
     "lint": "eslint \"./src/**/*.{jsx,js}\""
   },
   "eslintConfig": {
@@ -53,13 +53,6 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "7.21.5",
-    "husky": "^4.3.0",
     "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run build"
-    }
   }
 }

@@ -2,14 +2,24 @@
   "name": "phones-app",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "cd server && yarn start",
+    "client:prod": "cd client && yarn build",
+    "server:prod": "cd server && yarn build",
+    "client:dev": "cd client && yarn start",
+    "server:dev": "cd server && yarn start",
     "install:client": "cd client && yarn install",
     "install:server": "cd server && yarn install",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "postinstall": "npm run install:client && npm run install:server"
+    "postinstall": "npm run install:client && npm run install:server",
+    "dev": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
+    "prod": "concurrently --kill-others-on-fail \"yarn server:prod\" \"yarn client:prod\""
   },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cd client && yarn lint",
+      "pre-push": "yarn cliend:prod"
+    }
   }
 }

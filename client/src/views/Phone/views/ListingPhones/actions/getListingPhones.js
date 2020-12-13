@@ -4,7 +4,7 @@ function getListingPhones() {
   return async (dispatch, _, { api }) => {
     try {
       await dispatch(actions.listingPhonesActionRequest())
-      const data = await api.getPhones()
+      const { data } = await api.getPhones()
       await dispatch(actions.listingPhonesActionSuccess(data))
       return data
     } catch (e) {
