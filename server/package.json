@@ -7,7 +7,7 @@
   },
   "scripts": {
     "clean": "rm -Rf ./dist",
-    "build": "babel ./src --out-dir ./dist --copy-files",
+    "build": "yarn clean && babel ./src --out-dir ./dist --copy-files",
     "start": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js",
     "start:prod": "cross-env NODE_ENV=production node dist/index.js"
   },

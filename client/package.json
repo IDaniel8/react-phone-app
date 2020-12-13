@@ -25,7 +25,7 @@
   },
   "scripts": {
     "clean": "rm -Rf ./build",
-    "build": "react-app-rewired build",
+    "build": "yarn clean && react-app-rewired build",
     "start": "react-app-rewired start",
     "start:prod": "serve -l 3000 -s build",
     "lint": "eslint \"./src/**/*.{jsx,js}\""
