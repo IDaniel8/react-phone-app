@@ -2,6 +2,8 @@
   "name": "phones-app",
   "version": "1.0.0",
   "scripts": {
+    "client:build": "cd client && yarn build",
+    "server:build": "cd server && yarn build",
     "client:prod": "cd client && yarn build && yarn start:prod",
     "server:prod": "cd server && yarn build && yarn start:prod",
     "client:dev": "cd client && yarn start",
@@ -19,7 +21,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cd client && yarn lint",
-      "pre-push": "yarn client:prod"
+      "pre-push": "yarn client:build && yarn server:build"
     }
   }
 }
