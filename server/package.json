@@ -6,7 +6,8 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "build": "babel src -d dist && cross-env NODE_ENV=production node dist/index.js",
+    "clean": "rm -Rf ./dist",
+    "build": "babel ./src --out-dir ./dist --copy-files && cross-env NODE_ENV=production node dist/index.js",
     "start": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
