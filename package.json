@@ -19,7 +19,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cd client && yarn lint",
-      "pre-push": "yarn cliend:prod"
+      "pre-push": "yarn client:prod"
     }
   }
 }
