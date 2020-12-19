@@ -3,13 +3,11 @@ import { useDispatch } from 'react-redux'
 import { push } from 'connected-react-router'
 import { AsyncConsumer, ErrorBoundary, LoadingDisplay, ErrorDisplay } from '@components'
 import { getListingPhones } from './actions'
-import { phoneListSelector } from './selectors'
 
 import * as S from './ListingPhones.styles'
 
 function ListingPhones() {
   const dispatch = useDispatch()
-  const phoneList = phoneListSelector()
 
   const onClickFrame = useCallback(
     (phoneId) => () => {
@@ -22,11 +20,7 @@ function ListingPhones() {
     <S.LisingPhonesContainer>
       <ErrorBoundary errorNode={<ErrorDisplay />}>
         <S.PhonesContainer>
-          <AsyncConsumer
-            selectorData={phoneList}
-            thunkPromise={getListingPhones}
-            spinnerNode={<LoadingDisplay />}
-          >
+          <AsyncConsumer thunkPromise={getListingPhones} spinnerNode={<LoadingDisplay />}>
             {(data) => (
               <Fragment>
                 {data.map((phone) => (

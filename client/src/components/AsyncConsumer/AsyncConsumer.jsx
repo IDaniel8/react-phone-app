@@ -2,7 +2,7 @@ import React, { useCallback, Fragment } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAsync } from 'react-async'
 
-function AsyncConsumer({ thunkPromise, params, selectorData, children, spinnerNode }) {
+function AsyncConsumer({ thunkPromise, params, children, spinnerNode }) {
   const dispatch = useDispatch()
 
   const promiseFn = useCallback(async () => {
@@ -11,7 +11,6 @@ function AsyncConsumer({ thunkPromise, params, selectorData, children, spinnerNo
   }, [thunkPromise])
 
   const { data, error, isPending } = useAsync({ promiseFn })
-  const apiData = selectorData ?? data
 
   if (isPending) return <Fragment>{spinnerNode ?? 'Loading...'}</Fragment>
   if (error) {
@@ -20,7 +19,7 @@ function AsyncConsumer({ thunkPromise, params, selectorData, children, spinnerNo
     console.error(errorMessage)
     throw new Error()
   }
-  return <Fragment>{children(apiData)}</Fragment>
+  return <Fragment>{children(data)}</Fragment>
 }
 
 export default AsyncConsumer

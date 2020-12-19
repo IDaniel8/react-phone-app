@@ -20,7 +20,7 @@
     "consistent-return": "off",
     "react/prop-types": "off",
     "react/jsx-fragments": [1, "element"],
-    "import/no-unresolved": [2, { "caseSensitive": false }]
+    "import/no-unresolved": [2, { "caseSensitive": false, "ignore": ["^[@]"] }]
   },
   "settings": {
     "import/resolver": {

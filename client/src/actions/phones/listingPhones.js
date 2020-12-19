@@ -1,23 +1,7 @@
-const PhoneListingActionType = {
-  API_PHONES_LISTING: '@@API_PHONES_LISTING',
-}
+import { createAction } from '@reduxjs/toolkit'
 
-const listingPhonesActionRequest = () => ({
-  type: `${PhoneListingActionType.API_PHONES_LISTING}_GET_REQUEST`,
-})
+const listingPhonesActionRequest = createAction('@@API_PHONES_LISTING_GET_REQUEST')
+const listingPhonesActionSuccess = createAction('@@API_PHONES_LISTING_GET_SUCCESS')
+const listingPhonesActionError = createAction('@@API_PHONES_LISTING_GET_ERROR')
 
-const listingPhonesActionSuccess = (list) => ({
-  type: `${PhoneListingActionType.API_PHONES_LISTING}_GET_SUCCESS`,
-  payload: list,
-})
-
-const listingPhonesActionError = () => ({
-  type: `${PhoneListingActionType.API_PHONES_LISTING}_GET_ERROR`,
-})
-
-export {
-  PhoneListingActionType,
-  listingPhonesActionRequest,
-  listingPhonesActionSuccess,
-  listingPhonesActionError,
-}
+export { listingPhonesActionRequest, listingPhonesActionSuccess, listingPhonesActionError }

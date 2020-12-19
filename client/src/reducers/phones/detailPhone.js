@@ -1,16 +1,10 @@
-import { PhoneDetailActionType } from '@actions'
+import { createReducer } from '@reduxjs/toolkit'
+import { detailPhoneActionSuccess } from '@actions/phones'
 
-function detailPhoneReducer(state, action) {
-  switch (action.type) {
-    case `${PhoneDetailActionType.API_PHONES_DETAIL}_GET_REQUEST`:
-      return { ...state, isFetching: true }
-    case `${PhoneDetailActionType.API_PHONES_DETAIL}_GET_ERROR`:
-      return { ...state, isFetching: false }
-    case `${PhoneDetailActionType.API_PHONE_DETAIL}_GET_SUCCESS`:
-      return { ...state, selected: action.payload, isFetching: false }
-    default:
-      return state
-  }
-}
+const initialState = null
 
-export default detailPhoneReducer
+export default createReducer(initialState, {
+  [detailPhoneActionSuccess]: (_, action) => {
+    return action.payload
+  },
+})
