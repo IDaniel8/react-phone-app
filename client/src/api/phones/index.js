@@ -6,9 +6,8 @@ function getPhones() {
   })
 }
 
-// function getPhone({ id }) {
-//   const phoneData = PhonesDATA.find((phone) => phone.id === id)
-//   return phonesRequestMock(phoneData, 3000)
-// }
+function getPhone(id) {
+  return httpClient.get(`/phone/${id}?delay=500`, { force: true })
+}
 
-export { getPhones }
+export { getPhones, getPhone }

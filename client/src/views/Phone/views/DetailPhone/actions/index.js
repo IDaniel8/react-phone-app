@@ -1,1 +1,1 @@
-export * from './getPhone'
+export * from './getDetailPhone'

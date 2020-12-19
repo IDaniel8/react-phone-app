@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { push } from 'connected-react-router'
-import { AsyncConsumer, ErrorBoundary, LoadingDisplay, ErrorDisplay } from '@components'
+import { AsyncConsumer, ErrorBoundary, LoadingDisplay } from '@components'
 import { getListingPhones } from './actions'
 
 import * as S from './ListingPhones.styles'
@@ -18,7 +18,7 @@ function ListingPhones() {
 
   return (
     <S.LisingPhonesContainer>
-      <ErrorBoundary errorNode={<ErrorDisplay />}>
+      <ErrorBoundary>
         <S.PhonesContainer>
           <AsyncConsumer thunkPromise={getListingPhones} spinnerNode={<LoadingDisplay />}>
             {(data) => (

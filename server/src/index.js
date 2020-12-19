@@ -37,7 +37,7 @@ app.get("/api/phone/:id", async (req, res) => {
     if (!data) throw new Error("Not found");
     res.status(200).send(data);
   } catch (e) {
-    res.status(404).send({ error: { msg: e.message } });
+    res.status(404).send({ message: e.message });
   }
 });
 
@@ -45,7 +45,7 @@ app.all("*", (_, res) => {
   try {
     throw new Error("Bad request");
   } catch (e) {
-    res.status(400).send({ error: { msg: e.message } });
+    res.status(400).send({ message: e.message });
   }
 });
 

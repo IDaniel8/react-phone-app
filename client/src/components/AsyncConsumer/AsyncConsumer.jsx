@@ -1,6 +1,7 @@
 import React, { useCallback, Fragment } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAsync } from 'react-async'
+import { HandleServerError } from '@shared'
 
 function AsyncConsumer({ thunkPromise, params, children, spinnerNode }) {
   const dispatch = useDispatch()
@@ -14,10 +15,9 @@ function AsyncConsumer({ thunkPromise, params, children, spinnerNode }) {
 
   if (isPending) return <Fragment>{spinnerNode ?? 'Loading...'}</Fragment>
   if (error) {
-    const errorMessage = error.message ?? error
     // eslint-disable-next-line no-console
-    console.error(errorMessage)
-    throw new Error()
+    console.error(error.statusText)
+    throw new HandleServerError(error)
   }
   return <Fragment>{children(data)}</Fragment>
 }

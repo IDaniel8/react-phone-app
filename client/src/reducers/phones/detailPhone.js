@@ -5,6 +5,7 @@ const initialState = null
 
 export default createReducer(initialState, {
   [detailPhoneActionSuccess]: (_, action) => {
-    return action.payload
+    const phoneFromServer = action.payload
+    return phoneFromServer.id
   },
 })
