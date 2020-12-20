@@ -5,6 +5,7 @@
     "node": ">=12.0.0",
     "npm": ">=6.0.0"
   },
+  "private": true,
   "scripts": {
     "clean": "rm -Rf ./dist",
     "build": "yarn clean && babel ./src --out-dir ./dist --copy-files",
