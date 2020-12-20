@@ -20,7 +20,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn client:lint && yarn client:build && yarn server:build"
+      "pre-commit": "yarn client:lint",
+      "pre-push": "yarn client:build && yarn server:build"
     }
   }
 }
