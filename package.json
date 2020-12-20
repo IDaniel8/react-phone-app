@@ -11,6 +11,7 @@
     "install:server": "cd server && yarn install",
     "postinstall": "npm run install:client && npm run install:server",
     "dev": "concurrently --kill-others-on-fail \"yarn server:dev\" \"yarn client:dev\"",
+    "dev:docker": "docker-compose up",
     "deploy:backend": "git subtree push --prefix server heroku master"
   },
   "devDependencies": {
