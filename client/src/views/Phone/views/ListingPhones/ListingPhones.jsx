@@ -24,8 +24,8 @@ function ListingPhones() {
             {(data) => (
               <Fragment>
                 {data.map((phone) => (
-                  <S.PhoneDisplayWrapper key={phone.id} onClick={onClickFrame(phone.id)}>
-                    <S.PhoneDisplay phone={phone} />
+                  <S.PhoneDisplayWrapper key={phone.id}>
+                    <S.PhoneDisplay phone={phone} toDetailPhone={onClickFrame(phone.id)} />
                   </S.PhoneDisplayWrapper>
                 ))}
               </Fragment>

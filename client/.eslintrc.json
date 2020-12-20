@@ -31,6 +31,7 @@
         ["@actions", "./src/actions"],
         ["@reducers", "./src/reducers"],
         ["@components", "./src/components"],
+        ["@hooks", "./src/hooks"],
         ["@views", "./src/views"],
         ["@store", "./src/store"],
         ["@theme", "./src/theme"]

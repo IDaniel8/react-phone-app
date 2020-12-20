@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { AsyncConsumer, ErrorBoundary, LoadingDisplay } from '@components'
+import { imageImportContext } from '@shared'
 import { getDetailPhone } from './actions'
 
 import * as S from './DetailPhone.styles'
@@ -16,10 +17,16 @@ function DetailPhone() {
           params={{ id }}
           spinnerNode={<LoadingDisplay />}
         >
-          {(data) => (
-            <Fragment>
-              <pre>{JSON.stringify(data, null, 2)}</pre>
-            </Fragment>
+          {({ name, imageFileName, id: phoneId, ...restData }) => (
+            <S.DetailPhoneWrapper>
+              <S.PhoneImage src={imageImportContext(`./${imageFileName}`).default} />
+              <S.DetailPhoneTextWrapper>
+                <S.PhoneTitle>{name}</S.PhoneTitle>
+                {Object.keys(restData).map((dataKey) => (
+                  <S.PhoneSubtitle key={`${id}_${phoneId}`}>{restData[dataKey]}</S.PhoneSubtitle>
+                ))}
+              </S.DetailPhoneTextWrapper>
+            </S.DetailPhoneWrapper>
           )}
         </AsyncConsumer>
       </ErrorBoundary>

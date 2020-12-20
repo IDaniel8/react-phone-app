@@ -12,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: sans-serif
+    font-family: sans-serif;
+    font-size: 100%;
   }
 `
 
