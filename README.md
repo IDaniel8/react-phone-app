@@ -55,13 +55,13 @@ JWT_SECRET (for mocking purposes should removed when the api rest is more robust
 This app uses the latest version on react and its constructed with hooks and functional components.
 the architecture its based on the containers/view pattern with reusable global components and immer for immutability, also another tools like:
 
-for the base scaffoling => create-react-app [docs](https://create-react-app.dev/docs/getting-started/)
-for the styling => styled-components [docs](https://styled-components.com/)
-for the async-request handler => react-async [docs](https://docs.react-async.com/) and redux-thunk [docs](https://github.com/reduxjs/redux-thunk)
-for storage handler => redux-toolkit [docs](https://redux-toolkit.js.org/)
-for request adapter => axios [docs](https://github.com/axios/axios)
-for request cache-adapter => cachios [docs](https://github.com/AlbinoDrought/cachios)
-for routing pages => connected-react-router [docs](https://github.com/supasate/connected-react-router) and react-router-dom [docs](https://reactrouter.com/)
+_for the base scaffoling => create-react-app_ [docs](https://create-react-app.dev/docs/getting-started/)<br/>
+_for the styling => styled-components_ [docs](https://styled-components.com/)<br/>
+_for the async-request handler => react-async_ [docs](https://docs.react-async.com/) and redux-thunk [docs](https://github.com/reduxjs/redux-thunk)<br/>
+_for storage handler => redux-toolkit_ [docs](https://redux-toolkit.js.org/)<br/>
+_for request adapter => axios_ [docs](https://github.com/axios/axios)<br/>
+_for request cache-adapter => cachios_ [docs](https://github.com/AlbinoDrought/cachios)<br/>
+_for routing pages => connected-react-router_ [docs](https://github.com/supasate/connected-react-router) _and react-router-dom_ [docs](https://reactrouter.com/)<br/>
 
 The folder structure has:
 
